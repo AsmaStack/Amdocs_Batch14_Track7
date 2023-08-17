@@ -1,0 +1,19 @@
+package org.amdocs.bean;
+
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+public class TestSetterInjection {
+
+	public static void main(String[] args) {
+		
+ApplicationContext ctx= new ClassPathXmlApplicationContext("applicationContext.xml");
+
+
+		Person person1=ctx.getBean(Person.class);
+		person1.getPersonid();
+	}
+
+}

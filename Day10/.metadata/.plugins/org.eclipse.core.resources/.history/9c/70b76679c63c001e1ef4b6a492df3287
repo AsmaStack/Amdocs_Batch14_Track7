@@ -1,0 +1,11 @@
+package org.amdocs.bean;
+
+public class TestSetterInjection {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

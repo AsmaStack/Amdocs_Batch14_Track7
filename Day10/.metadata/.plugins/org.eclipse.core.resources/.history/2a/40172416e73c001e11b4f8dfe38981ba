@@ -1,0 +1,25 @@
+package p1;
+
+public class Employee {
+
+	
+	private int empid;
+	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+	public int getEmpid() {
+		return empid;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Hello" +this.empid;
+	}
+}
+

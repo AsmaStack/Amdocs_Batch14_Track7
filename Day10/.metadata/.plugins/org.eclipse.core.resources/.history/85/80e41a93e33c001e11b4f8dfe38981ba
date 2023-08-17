@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="addr1" class="org.amdocs.bean.Address">
+		<constructor-arg value="Bangalore"></constructor-arg>
+		<constructor-arg value="Karnataka"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+	<bean id="p1" class="org.amdocs.bean.Person">
+
+		<constructor-arg value="Yadav"></constructor-arg>
+		<constructor-arg value="10" type="int"></constructor-arg>
+		<constructor-arg>
+			<ref bean="addr1"></ref>
+		</constructor-arg>
+
+
+
+
+
+		<!-- <property name="personid"> <value>101</value> </property> <property 
+			name="personname"> <value>Jay</value> </property> -->
+	</bean>
+
+
+</beans>

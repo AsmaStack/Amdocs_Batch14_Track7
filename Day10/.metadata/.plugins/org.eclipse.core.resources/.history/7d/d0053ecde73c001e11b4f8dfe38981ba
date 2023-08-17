@@ -1,0 +1,6 @@
+package p1;
+
+@Component("service1")
+public class ServiceImpl implements MyService{
+
+}

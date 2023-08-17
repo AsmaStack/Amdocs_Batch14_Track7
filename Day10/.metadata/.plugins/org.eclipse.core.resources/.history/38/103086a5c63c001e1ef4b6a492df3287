@@ -1,0 +1,15 @@
+package org.amdocs.bean;
+
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class TestSetterInjection {
+
+	public static void main(String[] args) {
+		
+		Resource rs= new ClassPathResource("applicationContext.xml");
+		BeanFactory fs=new XmlBeanFactory(rs);
+	}
+
+}

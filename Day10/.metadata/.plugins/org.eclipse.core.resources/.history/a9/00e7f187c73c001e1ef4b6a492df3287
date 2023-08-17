@@ -1,0 +1,20 @@
+package org.amdocs.bean;
+
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class TestSetterInjection {
+
+	public static void main(String[] args) {
+		
+		Resource rs= new ClassPathResource("applicationContext.xml");
+		BeanFactory fs=new XmlBeanFactory(rs);
+		
+		Person person1=fs.getBean(Person.class);
+		System.out.println(person1);
+	}
+
+}

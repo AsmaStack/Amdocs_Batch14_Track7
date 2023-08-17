@@ -1,0 +1,36 @@
+package org.amdocs.bean;
+
+public class Person {
+
+	
+	private int personid;
+	private String personname;
+	
+	public Person() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getPersonid() {
+		return personid;
+	}
+
+	public void setPersonid(int personid) {
+		this.personid = personid;
+	}
+
+	public String getPersonname() {
+		return personname;
+	}
+
+	public void setPersonname(String personname) {
+		this.personname = personname;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [personid=" + personid + ", "
+				+ "personname="+personname + "]";
+	}
+	
+	
+}

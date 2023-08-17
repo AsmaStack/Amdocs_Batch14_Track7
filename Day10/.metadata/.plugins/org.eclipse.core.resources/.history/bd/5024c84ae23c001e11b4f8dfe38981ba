@@ -1,0 +1,5 @@
+package org.amdocs.bean;
+
+public class Address {
+
+}
