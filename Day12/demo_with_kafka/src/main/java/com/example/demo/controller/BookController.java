@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,10 +22,13 @@ import com.example.demo.service.BookService;
 public class BookController {
 
 	private BookService bookservice;
+    private final KafkaTemplate<String, Book> kafkaTemplate;
+
 
 	@Autowired
-	public BookController(BookService bookservice) {
+	public BookController(BookService bookservice, KafkaTemplate<String, Book> kafkaTemplate) {
 		
+		this.kafkaTemplate = kafkaTemplate;
 		this.bookservice = bookservice;
 	}
 	
@@ -47,7 +51,12 @@ public class BookController {
 
  @PostMapping
     public Book createBook(@RequestBody Book book) {
-        return bookservice.createBook(book);
+	 Book createdBook = bookservice.createBook(book);
+
+     // Produce the created book to a Kafka topic
+     kafkaTemplate.send("bookcreated_successtopic", createdBook);
+
+     return createdBook;
     }
 
     @PutMapping("/{id}")
